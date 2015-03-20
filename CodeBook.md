@@ -2,6 +2,8 @@
 This is a code book that describes the variables, the data, and any transformations or work performed to clean up the data.
 
 ##The Variables
+All variables used in the script run_analysis.R are local variables described in script comments.
+
 The variables in the final tidy dataset (tidydata.txt) are as follows:
 * "Subject" - the subject ID of the volunteer
 * "Activity" - the activity descriptor as given by the dataset
@@ -130,14 +132,16 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 
 ##Transformations
 To obtain the tidy dataset (tidydata.txt) the following steps were accomplished using the script run_analysis.R:
+* Read the measurements, subject ids, and activity ids from the dataset file
+* Read the features.txt and activity_labels.txt files for creation of column headings and proper subject and activity labeling.
 * Merge the train and test datasets into a single data frame including the subject id, activity, and all measurements.
 * Add column headings to the data frame as given in above in the section "The variables"
 * Extract only the columns for the mean and standard deviation of each measurement
 * Melt the data by "Subject" and "Activity" using the melt() function from reshape2
-* Cast the date into a new data frame using the dcast() function from reshape2 where the average of each variable is given
+* Cast the data into a new data frame using the dcast() function from reshape2 where the average of each variable is given
 
 The script accomplishes these steps through the use of three functions:
-* mergeDataset, which merges the two datasets into a single data frame with proper column headings. 
+* mergeDataset, which reads and merges the two datasets into a single data frame with proper column headings. 
 * mean_and_std, which extracts only the means and standard deviations for each measurement.
 * subject_activity_mean, which creates a tidy dataset of the averages of the cut dataset by subject number and activity
 
