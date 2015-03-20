@@ -130,11 +130,11 @@ Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012
 
 ##Transformations
 To obtain the tidy dataset (tidydata.txt) the following steps were accomplished using the script run_analysis.R:
-*Merge the train and test datasets into a single data frame including the subject id, activity, and all measurements.
-*Add column headings to the data frame as given in above in the section "The variables"
-*Extract the mean and standard deviation for each measurement
-*Melt the data by "Subject" and "Activity" using the melt() function from reshape2
-*Cast the date into a new data frame using the dcast() function from reshape2 where the average of each variable is given
+* Merge the train and test datasets into a single data frame including the subject id, activity, and all measurements.
+* Add column headings to the data frame as given in above in the section "The variables"
+* Extract the mean and standard deviation for each measurement
+* Melt the data by "Subject" and "Activity" using the melt() function from reshape2
+* Cast the date into a new data frame using the dcast() function from reshape2 where the average of each variable is given
 
 The script accomplishes these steps through the use of three functions:
 * mergeDataset, which merges the two datasets into a single data frame with proper column headings. 
