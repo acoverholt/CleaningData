@@ -2,7 +2,15 @@
 This is a code book that describes the variables, the data, and any transformations or work performed to clean up the data.
 
 ##The Variables
-All variables used in the script run_analysis.R are local variables described in script comments.
+The following global variables are created by the script:
+* data - a data frame containing the merged data including subject id and activity name with proper column headings (10299 obs. of 564 variables)
+* cutData - a version of the "data" data frame with only the columns for subject, activity, and the mean and standard deviation of each measurement (10299 obs. of 68 variables)
+* tidy - a data frame containing the data of cutData averaged over subject and activity (40 obs. of 68 variables)
+* mean_and_std - a function described below in the transformations section
+* mergeDataset - a function described below in the transformations section
+* subject_activity_mean - a function described below in the transformations section
+
+All other variables used in the script run_analysis.R are temporary local variables described in script comments.
 
 The variables in the final tidy dataset (tidydata.txt) are as follows:
 * "Subject" - the subject ID of the volunteer
